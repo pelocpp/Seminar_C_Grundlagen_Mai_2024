@@ -4,11 +4,12 @@
 
 #define  Maximum 150
 
-// Vorwärts-Deklaration
+// Vorwärts-Deklaration  // Signaturen
 void test_01();
 void test_02();
 void test_03();
 void test_04();
+void test_05();
 
 int main_hello_world()
 {
@@ -19,9 +20,7 @@ int main_hello_world()
     return 1;
 }
 
-int main()
+void main()
 {
-    test_04();
-
-    return 1;
+    test_05();
 }

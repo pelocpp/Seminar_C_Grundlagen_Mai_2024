@@ -42,5 +42,8 @@
     <ClCompile Include="Aufgabe_02_Zinsberechnung.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Test_05.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

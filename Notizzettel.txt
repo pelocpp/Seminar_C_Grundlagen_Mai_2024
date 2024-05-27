@@ -376,3 +376,53 @@ https://github.com/pelocpp/c_introduction/blob/master/C_Introduction/Exercises/T
 
 https://github.com/pelocpp/c_introduction/blob/master/C_Introduction/Exercises/Zinsberechnung/Exercises_Zinsberechnung.md
 
+====================================================
+
+Was ist ein Unterprogramm?
+
+Es werden mehrere Anweisungen zusammengefasst ...
+in einem Konstrukt 'Unterprogramm' ...
+dieses Konstrukt ist über einen Namen aufrufbar.
+
+a) Unterprogramm, Procedure, Subroutine
+
+   Liefert NICHTS zurück : void
+
+b) Funktion: Ein Ergebnis berechnet und zurückliefert.
+
+
+   Wird ebenfalls über den Namen aufgerufen, der Rückgabewert
+   sollte in einer WERTZUWEISUNG abgeholt werden.
+
+NICHT: Methode , Method -- OO (C++)
+
+Unterprogramm
+
+SYNTAX: 
+
+void NameDesUnterprogramms ( parameter )  {
+
+   ein oder mehrere Anweisungen;
+
+}
+
+== Parameter: Stellvertreter wofür ???
+
+    Für einen realen Wert, der beim Aufruf anzugeben ist!
+
+Einschub zu Konstanten:
+
+Per C-Sprachdefinition ist jeder Konstanten ein Datentyp ZUGEORDNET:
+
+
+123           int
+123l          long
+123ll         long long
+
+123.456       double
+123.456f      float
+123.456F      float
+
+'A'           char
+
+"ABCDE"       const char*
