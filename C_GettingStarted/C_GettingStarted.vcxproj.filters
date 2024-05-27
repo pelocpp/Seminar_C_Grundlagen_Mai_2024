@@ -36,5 +36,11 @@
     <ClCompile Include="Test_04.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Aufgabe_01_TeuflischeFolge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Aufgabe_02_Zinsberechnung.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
