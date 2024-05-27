@@ -1,0 +1,348 @@
+==========================================
+
+C Grundlagen
+
+Peter Loos // Du
+
+30+ Jahre SW-Entwicklung /Training
+
+== 20 Jahre (C/C++)
+== C#, Java, JavaScript (Python), Mobile Progr. (Java, Flutter: Dart)
+== Schulung: Back-to-the-Roots: C/C++
+
+Guten Morgen
+
+Rouven
+Jaroslaw
+Sivaraam
+
+==========================================
+
+Vormittags / Nachmittags: Pause 10.30 // 15 grob
+
+12 - 13 Uhr
+
+==========================================
+
+
+2 Tools:
+
+== Visual Studio 2022
+== Github.com
+
+   https://github.com/pelocpp
+
+   https://github.com/pelocpp/c_introduction
+
+
+==========================================
+
+Was sind meine Erwartungen an dieses Seminar?
+
+== Muss ab der nächsten Woche in C programmieren
+
+== Benötige einen Überblick über die Grundlagen
+
+== Will C Code lesen können / verstehen können
+
+== Welche Kenntnisse bringe ich mit // Grundkenntnisse Basic, C,  Python, NICHTS
+
+
+== Was MUSS drin sein.
+
+>> Strukturierter Überblick // Roter Faden
+
+>> Aufgaben sind dabei :)
+
+>> Pointer / Zeiger // Speicherverwaltung
+
+==========================================
+
+i) Übersetzer (Compiler):
+
+A) Syntax, Grammatik: Ist das Programm korrekt ???
+
+b) Wenn die Syntax korrekt: Es wird eine Zwischendatei erzeugt:
+
+   Program.obj   ===> .obj    Object File // Vorstufe von Maschinencode
+
+
+ii) Linker:
+
+   Erzeugt aus vielen .obj Datei eine (Singular) Datei
+   mit ausführbarem Maschinencode (.exe)
+
+Bemerkung:
+
+C ist extrem liberal.
+
+"A Programmer knows what he does"
+
+Fazit:  0 Errors, 0 Warnings
+
+iii) Preprocessor
+
+"Sehr historisches Tool"
+
+a) Bietet eine Möglichkeit, VOR DER ÜBERSETZUNG
+   
+   Änderungen am Quellcode vorzunehmen.
+
+b) Technisches:
+
+   Das Tool basiert auf einer REINEN TEXTVERARBEITUNG / TEXTERSETZUNG.
+
+c) Wie spreche ich das Tool an: 
+
+   Mit einem # - Zeichen in der ersten Spalte des Quelltextes.
+
+
+
+Es gibt einen NACHTEIL: Seine Arbeitsweise geht am ÜBERSETZER Vorbei 
+
+
+==========================================================
+
+Übersetzungsvorgang:
+
+i)    Quellcode (Editor)
+
+ii)   Preprocessor
+
+iii)  Übersetzer / Compiler (.obj)
+
+iv)   Linker : Maschinencode erzeugen (.exe)
+
+
+LNK ==> Linker
+
+1>MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+1>C:\Development\Seminar_C_Grundlagen_Mai_2024\C_GettingStarted\x64\Debug\C_GettingStarted.exe : fatal error LNK1120: 1 unresolved externals
+
+==========================================================
+
+Compiler / Übersetzer:
+    Die Anweisungen werden auf Maschinencode abgebildet.
+
+C/C++
+
+
+Interpreter:
+    Die Anweisungen werden vom Interpreter ausgeführt
+    (kein Maschinencode erzeugt).
+
+Basic, JavaScript, Python
+
+
+Maschinencode ist schneller als interpretierte Sprachen.
+
+Performanz:
+
+==========================================================
+
+Was ist eine Variable ???
+
+== Reserviertes Stück Speicher
+== Der Speicher wird auf Basis eines Datentyps betrachtet.
+== Das Stück Speicher hat einen Namen (Bezeichner, Identifier)
+
+Was ist ein Datentyp ???
+
+== Ein Stück Speicher besteht aus Bits und Bytes.
+== Wie sind diese Bits und Bytes zu verstehen / interpretieren ???
+
+   Als ganze Zahlen?
+   Als Gleitpunktzahlen?
+   Als Zeichen / Zeichenketten?
+
+   Anwort: Datentyp
+
+   Beispiel:  int => ganze Zahlen  (123, -123)
+              float => Gleitpunktzahlen (55.123)
+
+Was legt ein Datentyp auch (zusätzlich) fest:
+ 
+  Die Länge des Stücks Speicher.
+
+  sizeof =========> Länge in BYTES
+
+  1 Bit:  0 oder 1
+  1 Byte: 8 Bits
+
+  int ===> 4 Bytes
+
+Frage: Okay, int belegt 4 Bytes (32 Bits) im Speicher.
+
+Wie sehen diese 32 Bits aus ??????????????????
+
+int wert = 123;
+
+Dual-Zahlensystem // Zweier-Komplement // Microcomputer-Programmierung
+
+0000 0000  0000 0000   0000 0000  0111 1011
+
+Bemerkung: Die Größen in Bytes der Datentypen sind MASCHINENABHÄNGIG.
+
+Als ganze Zahlen?
+
+  short        2 Bytes
+  int          4 Bytes
+  long         4 Bytes
+  long long    8 Bytes
+
+Verschiedene Größen ==> Verschiedene Wertebereiche
+
+Als Gleitpunktzahlen?
+
+  float        4
+  double       8 
+
+Als Zeichen / Zeichenketten?
+
+  char
+
+// ===========================================
+
+Debugger:
+
+Tool :
+
+Das eigentliche Programm wird nun KONTROLLIERT
+
+mit einem ZWEITEN Programm (Debugger) ausgeführt:
+
+==> Man kann anhalten
+==> Man kann zB Werte von Variablen ansehen
+==> Man kann eine Anweisung im EINZELSCHRITT ausführen.
+
+// ==============================================
+
+Kontrollstrukturen
+
+==> Verzweigungen im Programm
+
+if:   SYNTAX
+
+if ( bedingung ) {    // block
+
+    ein oder mehrere anweisungen;
+}
+
+Was ist eine bedingung:
+
+Ausdruck, der wahr oder falsch zurückliefert:
+
+int n = 0;
+...
+
+if ( n > 10 )
+
+Achtung / Bemerkung:
+
+Datentyp bool: true , false   NICHT IN C (aber in C++)
+
+
+Eine Bedingung kann sich aus mehreren Bedingungen zusammensetzen.
+
+&&:   Logisches UND
+||:   Logisches ODER
+! :   Logisches Negation
+
+(( &:  Bitweises UND - Binäre UND-Verknüpfung ))
+
+==:   Test auf Gleichheit
+!=:   Test auf Ungleichheit
+
+=================================================
+
+Mehrere Operatoren:
+
+Beispiel: !, <=
+
+Zweites Beispiel:
+
+int n = 3 + 4 * 5;   // n = 35, 23
+
+Gibt es "Punkt-vor-Strich" ???
+
+Ja: Ist hier beschrieben:
+
+Operatoren-Vorrang
+
+https://en.cppreference.com/w/c/language/operator_precedence
+
+a) int n = 3 + (4 * 5);   // 23
+
+b) if ( ! (n <= 2) ) { ....
+
+
+Sonderfall:
+
+    if ( n ) {
+
+
+Warum ist das übersetzungsfähig?? Minimalismus.
+
+Abkürzung: 
+
+    if ( n != 0 ) {
+
+======================================
+
+if:
+
+Nach der Pause:  if - else ...
+
+for
+
+Übungen.
+
+======================================
+
+for:
+
+Kontrollstruktur: Ein oder mehrere Anweisungen wiederholt ausführen:
+
+Wie oft: Bedingung
+
+SYNTAX:
+
+for (  XXX   ;   YYY   ; ZZZ ) {
+
+    ein oder mehrere anweisungen;
+}
+
+XXX: Definition einer Schleifenvariable ("i")
+
+     Wird EINMAL ausgeführt !!!
+
+YYY: Bedingung  ==> wahr  / falsch
+
+ZZZ: Ändern der Schleifenvariable ("i")
+
+// =====================================
+
+Es gibt 2 Schlüsselwörter / 2 Anweisungen,
+um den Ablauf einer for - Kontrollstruktur zu beinflussen.
+
+break;        Verlässt die Kontrollstruktur - vorzeitiges Ende.
+
+continue;     Springt direkt in die Weiterschalt-Anweisung
+
+// ================================================
+
+if, for ==> while
+
+while:
+
+Kontrollstruktur: Ein oder mehrere Anweisungen wiederholt ausführen:
+
+Wie oft: Bedingung
+
+SYNTAX:
+
+while ( bedingung ) {
+
+}
+
+// ================================================
