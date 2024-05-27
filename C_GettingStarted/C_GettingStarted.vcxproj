@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Aufgabe_01_TeuflischeFolge.c" />
     <ClCompile Include="Aufgabe_02_Zinsberechnung.c" />
+    <ClCompile Include="Aufgabe_03_HarmonischeReihe.c" />
     <ClCompile Include="Program.c" />
     <ClCompile Include="Test_03.c" />
     <ClCompile Include="Test_01.c" />
