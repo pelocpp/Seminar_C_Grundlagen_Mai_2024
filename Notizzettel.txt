@@ -346,3 +346,33 @@ while ( bedingung ) {
 }
 
 // ================================================
+
+2 Aufgaben:
+
+Teuflische Folge:
+
+Zahlenfolge:  Berechnen und in der Konsole ausgeben.
+
+Startwert n;
+
+int n = 7;
+
+Nächste Element:
+
+n gerade:     n / 2
+
+n ungerade:   3 * n + 1
+
+Beispiel:
+
+7 => 22  => 11  => 34  => 17  => 52  => 26   => 13   => 40  => 20  => 10  => 5
+   => 16  => 8   => 4  => 2  => 1 : ENDE
+
+====================================================
+
+Übungen:
+
+https://github.com/pelocpp/c_introduction/blob/master/C_Introduction/Exercises/TeuflischeFolge/Exercises_TeuflischeFolge.md
+
+https://github.com/pelocpp/c_introduction/blob/master/C_Introduction/Exercises/Zinsberechnung/Exercises_Zinsberechnung.md
+
