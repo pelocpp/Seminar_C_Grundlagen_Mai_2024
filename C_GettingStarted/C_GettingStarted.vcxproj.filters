@@ -61,6 +61,9 @@
     <ClCompile Include="Test_09.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Test_10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png" />

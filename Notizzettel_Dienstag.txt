@@ -407,8 +407,120 @@ Frage: Ist ein char-Array // char zeichen[20] eine Zeichenkette in C ???
 
 Depends :)  Wenn in dem Array die Zeichenkette mit einer 0 abgeschlossen ist !!!
 
-15:20
- 
+=========================================================================
+
+Zeichen
+
+Zeichenketten:
+
+Definition == Folge von Zeichen PLUS '\0'
+
+Im Programm:  i)  Konstante: "ABCDE" (die '\0' ist da automatisch dabei)
+
+              ii) Feld von char: Das  '\0' hier nicht vergessen.
+
+
+=========================================================================
+
+Speicherbereiche in C:
+(in Programmiersprachen)
+----------------------
+
+https://github.com/pelocpp/cpp_introduction/blob/master/Cpp_Introduction/Markdown/DynamicMemoryManagement.md
+
+a) Stack und Heap
+
+b) Globale Variablen // remanent
+
+C  ==> Betriebssystem:  C-Programm ==> PROZESS ==> Speicher
+
+i)  Globale Variablen:
+      Wird auf der OBERSTEN Ebene veinbart.
+
+      ==> Eigen sich zur Ablage von Daten, die - mit Sicherheit -
+          während der gesamten Programmlaufzeit benötigt werden.
+
+ii) Lokale Variablen:
+      Werden INNERHALB von Funktionen veinbart.
+
+      ==> Sie eignen sich nur zur Ablage von Zwischenergebnissen.
+
+iii) Dynamischen Variablen:
+
+     Werden angelegt, wenn man sie benötigt ... und freigegeben,
+     wenn man sie nicht mehr benötigt.
+
+
+Es gibt in Programmen auch KONSTANTE:  
+
+int n = 123;
+
+double d = 234234.23423;   // 8 Bytes
+
+"asdasdasdasdasdasd"
 
 
 
+Zuordnung zur Maschinen-Architektur:
+
+Globales Datensegment (Data)  ==>  Globale Variablen
+                                   Konstanten
+
+Codebereich (Code)            ==>  Maschinencode
+                                   Konstanten
+
+Stapel (Stack)                ==>  Lokale Variablen (push, pop)
+
+Halde (Heap)                  ==>  Dynamischen Variablen
+
+=========================================================================
+
+A) char* kette1 = "123456";
+
+B) char kette2[20] = "123456";
+
+
+i) Gemeinsamkeiten:
+
+   kette1 und kette2 stehen für ADRESSEN.
+
+
+ii) Unterschiede:
+
+a) char* kette1 = "123456";
+
+   WO LIEGT kette1 im Speicher ?
+
+   "123546" ist konstant ==> vermutlich im 
+
+   Globales Datensegment (Data) oder im Codebereich (Code)
+
+
+
+b)  char kette2[20] = "123456";
+
+   WO LIEGT kette2 im Speicher ?
+
+   2 Möglichkeiten: 
+
+   i) Globales Datensegment (Data), wenn global definiert
+
+   ii) Stack, wenn es ich um eine lokale Variable handelt.
+
+
+   // Übungen: Vom Tisch .. morgen zum Start
+
+
+A) Länge einer Zeichenkette: 
+
+     int str_length(char* cp);
+
+B) Ein Zeichen einfügen:
+
+     int str_insert (char* ursprung, char* ergebnis, int length, char welchesZeichen, int pos);
+
+     'A' in "12345" nach der 2. Stelle einfügen
+
+     "123A45"
+
+C) Ein Zeichen löschen

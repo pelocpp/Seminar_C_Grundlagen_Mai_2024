@@ -14,6 +14,16 @@ void test_06();
 void test_07();
 void test_08();
 void test_09();
+void test_10();
+
+// globale Variable 
+extern int globaleVariable;
+
+void ausgeben2()
+{
+    printf("Wert: %d\n", globaleVariable);
+}
+
 
 int main_hello_world()
 {
@@ -26,5 +36,7 @@ int main_hello_world()
 
 void main()
 {
+    ausgeben2();
+
     test_09();
 }

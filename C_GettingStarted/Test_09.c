@@ -2,6 +2,9 @@
 
 // Zeichen und Zeichenketten
 
+// global
+char g_kette2[20] = "123456";
+
 void test_09_01()
 {
     int size = sizeof(char);
@@ -34,7 +37,7 @@ void test_09_02()
 
 }
 
-void test_09()
+void test_09_03()
 {
     // Das 0 Zeichen
 
@@ -51,6 +54,7 @@ void test_09()
 
     // Eine Zeichenkette in einem ARRAY
     char zeichen[20];
+
     zeichen[0] = 'A';
     zeichen[1] = 'B';
     zeichen[2] = 'C';
@@ -73,4 +77,77 @@ void test_09()
 
     printf("6.: %zu\n", sizeof (*s));
     printf("6.: %zu\n", sizeof(char));
+}
+
+
+//void  frage ()
+//{
+//    int vieleDaten[100000];
+//}
+
+// "123456" + '\0'
+int str_length(char* cp)   // Liefert Anzahl der Zeichen - OHNE '\0' zurück
+{
+    int result = 0;
+
+    while (*cp != '\0') {
+
+        result++;
+        cp++;
+        // cp = cp + 1;
+    }
+
+    return result;
+}
+
+
+void test_09_04()
+{
+    char* kette1 = "123";
+
+    // oder
+    
+    char kette2[20] = "123";  // Ja, da ist hinten noch Freiraum
+
+    int length1 = str_length(kette1);
+
+    int length2 = str_length(kette2);
+
+    str_insert(kette1);
+}
+
+int str_insert(char* ursprung, char* ergebnis, int length, char welchesZeichen, int pos)
+{
+    // a) Bis zur Position pos (einschließlich) alle Zeichen aus 'ursprung' nach 'ergebnis' umkopieren
+    for (int i = 0; i <= pos; ++i) {
+
+        ergebnis[i] = ursprung[i];
+    }
+
+    // b) Zeichen 'welchesZeichen' in 'ergebnis' anhängen
+    ergebnis[pos+1] = welchesZeichen;
+
+    // C) Restlichen Zeichen von  'ursprung' nach 'ergebnis' umkopieren
+
+    int lenUrsprung = str_length(ursprung);
+
+    for (int i = pos + 1; i < lenUrsprung; ++i) {
+
+        ergebnis[i+1] = ursprung[i];
+    }
+
+    // d) Das ergebnis mit einer '\0' abschließen 
+    ergebnis[lenUrsprung + 1] = '\0';
+ }
+
+
+void test_09()
+{
+    char* kette1 = "12345";     // Konstante, kein Array, hinten gehört uns der Platz NICHT !!!
+    // oder
+    char kette2[20] = "12345";  // Ja, da ist hinten noch Freiraum
+
+    char result[20];
+
+    str_insert(kette1, result, 20, '?', 2);
 }
