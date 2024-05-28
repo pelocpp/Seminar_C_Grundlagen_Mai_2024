@@ -55,5 +55,17 @@
     <ClCompile Include="Test_07.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Test_08.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_09.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Pointer_01.png" />
+    <Image Include="..\Pointer_02.png" />
+    <Image Include="..\Pointer_03.png" />
+    <Image Include="..\Pointer_04.png" />
   </ItemGroup>
 </Project>

@@ -182,10 +182,23 @@ void test_07()
 
     printf("x = %d, y = %d\n", x, y);   // 123 , 456
 
-    swap (x, y);    // oder so ähnlich :)
+    swap (&x, &y);    // oder so ähnlich :)
 
     printf("x = %d, y = %d\n", x, y);   // 456 , 123
 }
+
+Lösung:
+-------
+
+static void swap(int* px, int* py)
+{
+    int tmp = *py;
+
+    *py = *px;
+
+    *px = tmp;
+}
+
 
 
 Zweite Aufgabe:
@@ -193,4 +206,209 @@ Zweite Aufgabe:
 Abschnitt "Zeiger (Pointer)"
 
 Aufgabe zum Datentyp Zeiger (Pointer)
+
+// ===================================================
+
+Zeigerarithmetik
+
+int* pi;
+
+pi = &n;
+
+.....
+
+pi ++;
+
+"Wir gehen eine Adresse weiter"
+
+Beispiel:  pi hat den Wert 0x1024 als Adresse
+
+pi++;
+
+Wie funktioniert ++ in diesem Fall ???
+
+Definition:
+
+Der ++ Operator soll die NÄCHSTE Adresse bilden,
+an der eine int-Variable liegen kann.
+
+pi: 0x1024
+
+Wenn Hinter 0x1024 eine int-Variable liegt: 
+
+int-Variable benötigt 4 Bytes: 0x1024, 0x1025, 0x1026, 0x1027
+
+Welchen Wert hat pi jetzt: 0x1028
+
+Warum: sizeof (int) == 4
+
+Der ++ - Operator geht im Speicher diese Anzahl Bytes weiter !!!!!!!!!!
+
+Warum läuft es:  Zufall.
+
+================================================
+
+Zeigerarithmetik:
+
+Wozu ?????????????????????????
+
+"Spirit / Geist von C"
+
+Aussage:  Ironisch ==> "Es gibt in C keine Arrays / Felder"
+
+Kernaussage:
+
+int zahlen[5] = { 0 };
+
+Was ist 'zahlen' ???
+
+Der Name / Bezeichner / Idenitifier eines Felds.
+
+Präziser / Exakt:
+
+Eine Anfangsadresse eines Stücks Speicher
+-----------------------------------------
+
+Der Index-Operator [] für Felder in C
+
+wird INTERN (bei der Übersetzung) abgebildet auf 
+
+eine INDIREKTEN Zugriff mit Zeigerarithmetik:
+
+zahlen[i]  ===> * (zahlen + i)
+
+===============================================
+
+Ein Feld an ein Unterprogramm übergeben:
+
+Vorbemerkung:
+
+Geht, es wird die (Anfangs-)Adresse des Felds übergeben.
+
+
+A)
+    void feldVorbelegen(int feld[5]) ....
+
+    GANZ SCHLECHT ... BITTE NICHT SO MACHEN
+
+    UND: Die Länge 5 ist im Unterprogramm NICHT VERFÜGBAR.
+
+B)
+    void feldVorbelegen2(int feld[], int length) ...
+
+    BESSER ... feld steht für eine Anfangsadresse,
+           die Länge ist separat in einem zweiten Parameter
+           zu übergeben
+
+C)
+    void feldVorbelegen3(int* feld, int length) ...
+
+    Aus meiner Sicht optimal:
+
+    Ein Array ist eine Anfangsadresse ... die Länge, die
+    verfügbar ist, wird im 2. Parameter übergeben.
+
+
+
+        feld[i] = 2 * i;
+00007FF75A5671B0  mov         eax,dword ptr [rbp+4]  
+00007FF75A5671B3  shl         eax,1  
+00007FF75A5671B5  movsxd      rcx,dword ptr [rbp+4]  
+00007FF75A5671B9  mov         rdx,qword ptr [feld]  
+00007FF75A5671C0  mov         dword ptr [rdx+rcx*4],eax  
+        
+        // ist identisch mit
+
+        *(feld + i) = 2 * i;
+00007FF75A5671C3  mov         eax,dword ptr [rbp+4]  
+00007FF75A5671C6  shl         eax,1  
+00007FF75A5671C8  movsxd      rcx,dword ptr [rbp+4]  
+00007FF75A5671CC  mov         rdx,qword ptr [feld]  
+00007FF75A5671D3  mov         dword ptr [rdx+rcx*4],eax  
+
+Übung:
+
+Machen wir  ... Felder und Unterprogramme ... 
+
+"Two-in-One":   Zeichenketten.
+
+Nachbemerkung;
+
+Ein Feld an ein Unterprogramm übergeben:
+
+Geht, es wird die (Anfangs-)Adresse des Felds übergeben.
+
+Die Länge des Feldes ist - an Hand der Adresse - NICHT verfügbar:
+
+Man spricht hier von "Array Decay"
+
+to decay: es geht etwas verloren - die Länge.
+
+======================================================
+
+Zeichen und Zeichenketten
+
+
+Zeichen:       Singular
+
+Zeichenkette:  Plural
+
+Zeichen:       Datentyp char
+
+Größe:         1 Byte
+
+Im Maschinencode wird ein Zeichen mit einem int-Wert dargestellt.
+
+Welchem int-Wert?  ASCII-Tabelle.
+
+https://github.com/pelocpp/cpp_introduction/blob/master/Cpp_Introduction/Markdown/Strings.md
+
+Symbiose:      char <=> int
+
+Normalfall:    Zwischen verschiedenen Datentypen gibt es keine Symbiose:
+               Typkonvertierung.
+
+Was ist Carriage Return ?????????????
+
+Was ist eine Schreibmaschine ???
+
+Oben ist der Wagen.  ===> Wagenrücklauf = Carriage Return;
+
+Windows:
+
+Linux/Unix:  
+
+1 zeichen:  13 = Carriage Return;
+
+2 Zeichen:  Line Feed + Form Feed
+
+
+// ================================================
+
+Was ist eine Zeichenkette: Eine Folge von Zeichen
+
+Wie wird in C eine Zeichenkette im Speicher abgebildet:
+
+C-Zeichenkette:
+
+a) Als Array der entsprechenden ASCII-Codes.
+
+b) Plus am Ende eine 0: Die abschließende / das terminierende Null-Zeichen
+
+WOZU die 0 ?????????????????????????
+
+Es gibt bei einer Zeichenkette in C KEINE Information der Länge !!!
+
+Deshalb ist das Ende der Zeichenkette mit der 0 im Speicher zum Ausdruck
+zu bringen.
+
+
+Frage: Ist ein char-Array // char zeichen[20] eine Zeichenkette in C ???
+
+Depends :)  Wenn in dem Array die Zeichenkette mit einer 0 abgeschlossen ist !!!
+
+15:20
+ 
+
+
 

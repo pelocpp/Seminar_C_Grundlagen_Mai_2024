@@ -2,7 +2,7 @@
 
 // Zeiger
 
-void test_07()
+void test_07_01()
 {
     int n;
 
@@ -73,4 +73,41 @@ void test_07_03()
     malZweiEx(addressOfx);
 
     printf("x = %d\n", x);   // 123 oder 246
+}
+
+
+void test_07()
+{
+    int n = 123;
+
+    int* pi = NULL;
+    // oder
+    // int* pi = 0;
+
+    pi = &n;
+    *pi = 456;
+
+    printf("n = %d\n", n);
+
+    // ===================================
+    // Zeigerarithmetik
+
+    // pi++;
+    pi = pi + 1;  // Auch hier werden 4 Bytes auf die Adresse dazu gezählt
+                  // 1 steht für sizeof (int)
+
+    pi--;
+
+    // geht das: Ja, das geht -- ist aber FALSCH / UNZULÄSSIG
+    *pi = 789;
+
+
+    char ch = 'A';
+
+    int tmp = sizeof(char);
+
+    char* cp = &ch;
+
+    cp++;   // weil sizeof (char) == 1
+
 }

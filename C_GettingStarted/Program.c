@@ -12,7 +12,8 @@ void test_04();
 void test_05();
 void test_06();
 void test_07();
-
+void test_08();
+void test_09();
 
 int main_hello_world()
 {
@@ -25,5 +26,5 @@ int main_hello_world()
 
 void main()
 {
-    test_07();
+    test_09();
 }
