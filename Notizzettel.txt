@@ -426,3 +426,13 @@ Per C-Sprachdefinition ist jeder Konstanten ein Datentyp ZUGEORDNET:
 'A'           char
 
 "ABCDE"       const char*
+
+=================================================================
+
+Dienstag:
+
+Arrays
+
+====> Parameterübergabe zum Zweiten:  Adressen
+
+=================================================================

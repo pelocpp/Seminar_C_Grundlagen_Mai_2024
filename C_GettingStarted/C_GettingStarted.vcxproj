@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Notizzettel.txt" />
+    <Text Include="..\Notizzettel_Dienstag.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Aufgabe_01_TeuflischeFolge.c" />
@@ -142,6 +143,8 @@
     <ClCompile Include="Test_02.c" />
     <ClCompile Include="Test_04.c" />
     <ClCompile Include="Test_05.c" />
+    <ClCompile Include="Test_06.c" />
+    <ClCompile Include="Test_07.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -19,6 +19,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Notizzettel.txt" />
+    <Text Include="..\Notizzettel_Dienstag.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Program.c">
@@ -46,6 +47,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Aufgabe_03_HarmonischeReihe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test_07.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

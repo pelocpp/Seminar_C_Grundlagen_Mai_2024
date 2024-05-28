@@ -1,0 +1,196 @@
+==========================================
+
+C Grundlagen
+
+Dienstag
+
+==========================================
+
+Felder / Array:
+
+Was ist ein Feld:
+
+Feld: dt. Übersetzung für Array.
+
+> Ein Stück Speicher / Ein Speicherbereich, der mehrere Variablen DESSELBEN Typs enthält.
+
+> Die Länge / Größe des Speicherbereichs ist FEST !!!!!!!
+
+> int numbers[10];  // 10 ist FIX
+
+((
+
+     ABER: Es geht auch mit einer variable Länge:
+
+     (( Dynamisch Speicher anlegen))
+
+     int n = 10;
+
+     int* numbers = malloc (n * sizeof (int));
+
+     VORSICHT:
+
+     free (numbers);
+
+))
+
+
+
+
+
+
+// C99: Dieser Dialekt kann das.
+
+Beispiele:
+
+Europa-Wahl: Stimme 
+
+20 Parteien:
+
+Feld der Länge 20 des Typs int anbieten:
+
+SPD: Wo in dem Feld sind die Stimmen der SPD
+
+CDU: Wo in dem Feld sind die Stimmen der CDU
+
+==> Index
+
+int stimmen [20];
+
+// SPD: Index 0
+// CDU: Index 1
+// FDP: Index 2
+
+#define SPD_Index 0
+#define CDU_Index 1
+
+==========================================================
+
+SYNTAX:   Daten (keine Kontrollstruktur)
+
+type name_des_felds [ laenge ];
+
+
+Zugriff auf ein einzelnes Element:  Mit Index
+
+ACHTUNG:
+
+Beispiel:
+
+int numbers[10];
+
+Zugriff auf das ERSTE Element:
+
+   numbers[0] = 1;
+
+
+Zugriff auf das LETZTE Element:
+
+   numbers[9] = 2;
+
+
+"Was steht im DRITTEN Element drin ???"  ???
+
+Meinst du Index 3 oder Index 2 ist eine sinnvolle Frage
+
+Bemerkung:
+
+int numbers[10];
+
+numbers[10] = 123;   NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO / FALSCH
+
+
+Bemerkung:  sizeof  ==> bytes !!!
+
+// ===========================================================
+
+Adressen / Zeiger
+------------------
+
+Wozu ???  ==> Da kommen viele Anwendungen / Beispiele - versprochen.
+
+Erste Anwendung: Parameterübergabe
+
+Wie werden Parameter übergeben ?
+
+Speicherbereich: Stapel / Stack
+
+Wie kann ich auf den Stack zugreifen ???
+
+NICHT direkt, also an einer Adresse in diesem Bereich !!!
+
+TOS: Top of Stack
+
+SP:  Stack Pointer -  dieser zeigt auf die erste freie Stelle
+
+Zugriff: Push .. lege einen Wert an der ersten freien Stelle ab // SP korrigiert 
+
+
+============================================================
+
+Parameterübergabe in C:
+
+a) Zu jedem Parameter (realen Wert) wird eine KOPIE auf dem Stapel angelegt.
+
+b) Das Unterprogramm hat Zugriff auf die KOPIE.
+
+c) Jargon:   ("Call-by-Copy")   Call-by-Value.
+
+https://github.com/pelocpp/cpp_introduction/blob/master/Cpp_Introduction/Markdown/ParameterPassingTechniques.md
+
+Alle innerhalb von Funktionen vorgenommenen Änderungen werden an den Funktionskopien vorgenommen
+und damit nicht in den tatsächlichen Parametern (originaler Speicherort) des Funktionsaufrufs widergespiegelt.
+
+Copy-by-Value: Die Originale sind geschützt.
+
+d) Es ist auch "Call-by-Address" möglich:
+
+   Die Adresse ist EXPLIZIT (mit dem & Operator) zu übergeben.
+
+
+============================================================
+
+Frage:
+
+Gibt es einen prinziellen Unterschied zwischen einem DIREKTEN
+und einem INDIREKTEN Zugriff auf eine Variable ???
+
+    n = 456;
+00007FF6198E675D  mov         dword ptr [n],1C8h  
+
+
+    *pi = 789;
+00007FF6198E6764  mov         rax,qword ptr [pi]  
+00007FF6198E6768  mov         dword ptr [rax],315h  
+
+
+PERFORMANZ
+
+============================================================
+
+2 Übungen:
+
+Schreiben Sie eine Funktion tausche / swap :
+
+Diese besitzt 2 Parameter: Die Werte der Variablen des Aufrufs werden getauscht :)
+
+
+void test_07()
+{
+    int x = 123;
+    int y = 456;
+
+    printf("x = %d, y = %d\n", x, y);   // 123 , 456
+
+    swap (x, y);    // oder so ähnlich :)
+
+    printf("x = %d, y = %d\n", x, y);   // 456 , 123
+}
+
+
+Zweite Aufgabe:
+
+Abschnitt "Zeiger (Pointer)"
+
+Aufgabe zum Datentyp Zeiger (Pointer)
+
