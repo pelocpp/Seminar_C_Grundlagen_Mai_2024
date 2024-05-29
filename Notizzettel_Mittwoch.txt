@@ -177,9 +177,128 @@ im Programm verfolgen / beobachten.
 
 ===================================================================
 
-13:10
-
 Strukturen
 
-Komplex-Übung: Strukturen + Dyn. Speicherverwaltung.
+Zusammenfassung mehrerer Daten (die sinnigerweise irgendwie zusammengehören)
+in einem gemeinsamen Konstrukt.
 
+Bemerkung: =======>  eine Struktur ist der Vorläufer einer Klasse (OO)
+
+
+Gegenstück zu Feldern / Arrays:
+
+Ansammlung von Daten - diese können unterschiedlichen Typs sein:
+
+Beispiel:
+
+Person: Namen, Alter
+
+SYNTAX:
+
+struct Person
+{
+    char firstName[32];
+    char lastName[32];
+    int  age;
+};
+
+
+Nebenbemerkung:
+
+Gibt es eine bessere Lösung, als immer 32 Zeichen zu reservieren?
+
+struct Person
+{
+    char* firstName;  // malloc - allokiertes Stück Speicher // free
+    char* lastName;
+    int  age;
+};
+
+===================================
+
+// Datentyp wie int, double, Array
+struct Time
+{
+    int hours;
+    int minutes;
+    int seconds;
+};
+
+
+Zusammengesetzter Datentyp
+
+user-defined data type
+
+Benutzerdefinierter Datentyp <=> System-seitigen Datentyp
+
+=======================================================
+
+Beobachtung:
+
+Warum gibt es bei
+
+initTime(jetzt, 13, 25, 33, 100);
+
+KEINEN FEHLER, wenn die Funktion 'initTime' durch
+
+void initTime(struct Time time, int hours, int minutes, int seconds)
+
+definiert ist ?????????????????
+
+===> printf in C mit bel. vielen Parametern haben können .
+
+
+=======================================================
+
+Empfehlung:
+
+Möchte man Strukturen in MEHREREN Dateien verwenden,
+sollte man diese in eine sog. "Header"-Datei auslagern.
+
+"Header"-Datei: Datei mit der Endung h.
+
+Bemerkung:
+
+"Header"-Dateien sind NiCHT übersetzungsfähig
+
+   ==> Sie tragen NICHT zu einem .obj File bei !!!
+
+======================================================
+
+Bemerkung:
+
+void initTime (struct Time* time, int hours, int minutes, int seconds)
+{
+   ....... 
+   // KEINE KENNTNIS, ob die Adresse (time) auf die Halde oder den Stack zeigt.
+
+
+
+Aufruf von initTime:
+
+2 Möglichkeiten des AUFRUFS:
+
+A) struct Time time;   // STACK
+
+   initTime  ( & time, ...);
+
+B) struct Time* pt = malloc (sizeof (struct Time));   // HEAP
+
+   initTime  ( pt, ...);
+
+=====================================================
+
+Stack und Heap:
+
+Dualität
+Symbiose
+
+=====================================================
+
+Was ist ein Nachteil dieser Realisierung:
+
+void printTime(struct Time time);
+
+==> Performanz ist auf Grund der Kopie schlecht!
+
+Go-for-Pointer :)

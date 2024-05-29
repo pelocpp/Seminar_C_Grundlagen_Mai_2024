@@ -150,12 +150,16 @@
     <ClCompile Include="Test_09.c" />
     <ClCompile Include="Test_10.c" />
     <ClCompile Include="Test_11.c" />
+    <ClCompile Include="Test_12.c" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png" />
     <Image Include="..\Pointer_02.png" />
     <Image Include="..\Pointer_03.png" />
     <Image Include="..\Pointer_04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
