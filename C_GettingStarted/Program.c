@@ -15,6 +15,7 @@ void test_07();
 void test_08();
 void test_09();
 void test_10();
+void test_11();
 
 // globale Variable 
 extern int globaleVariable;
@@ -36,7 +37,5 @@ int main_hello_world()
 
 void main()
 {
-    ausgeben2();
-
-    test_09();
+    test_11();
 }

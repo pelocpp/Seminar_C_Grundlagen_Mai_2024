@@ -149,6 +149,7 @@
     <ClCompile Include="Test_08.c" />
     <ClCompile Include="Test_09.c" />
     <ClCompile Include="Test_10.c" />
+    <ClCompile Include="Test_11.c" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png" />

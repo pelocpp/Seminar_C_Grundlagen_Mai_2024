@@ -65,3 +65,121 @@ char puffer [100];
 
 append ("12345" , '!' , puffer, 100 );
 
+=========================================
+
+Bemerkung:
+
+Übersicht
+Realisieren Sie ein oder mehrere Funktionen, die auf Zeichenketten operieren:
+
+length – Berechnet die Länge einer Zeichenkette.
+replace – Ersetzen eines Zeichens oder einer Zeichenkette.
+append – Anhängen eines Zeichens oder einer Zeichenkette.
+insert – Einfügen eines Zeichens oder einer Zeichenkette in eine andere Zeichenkette.
+remove – Anhängen eines Zeichens oder einer Zeichenkette an eine andere Zeichenkette.
+
+===> Bibliothek:   CRT - C Runtime Library
+
+https://github.com/MicrosoftDocs/cpp-docs/blob/main/docs/c-runtime-library/c-run-time-library-reference.md
+
+Beispiel:
+
+char *strcat(
+   char *strDestination,      // Länge ??????????????
+   const char *strSource 
+);
+
+In einer ersten Definition waren diese Funktion minimalistisch realisiert: Keine Bereichsüberprüfung.
+
+Was nehmen wir mit:
+
+==> C-Programm:   ==> CRT - C Runtime Library
+
+Warum haben wir str_append selber realisiert: VERSTÄNDNIS !!!!!!!!!!!!
+
+=========================================
+
+Dynamischen Speicherverwaltung:
+
+https://github.com/pelocpp/cpp_introduction/blob/master/Cpp_Introduction/Markdown/DynamicMemoryManagement.md
+
+malloc ():  
+
+Wieviel Speicher?   Größe ist in BYTES.
+
+Nicht vorbelegter Speicher:
+
+0xCCCCC      => Stack
+
+0xCDCDCDCD   => Heap - nach der Reservierung
+
+0xDDDDDDDD   => Heap - nach der Freigabe
+
+=========================================
+
+    int* ip = malloc(1 * sizeof(int));
+
+    if (ip == NULL) {
+        printf("Kein Speicher mehr ....");
+        return;
+    }
+
+Frage: Muss die if-Anweisung sein ???????????????
+
+a) Bei GROßen ANFORDERUNGEN: Ja
+
+b) bei kleinen: Nicht unbedingt !
+
+=========================================
+
+ACHTUNG:
+
+Ein "Double-free" ist NICHT MÖGLICH / ABSTURZ !!!!!!!!!!
+
+Warum ist das nicht möglich ???
+
+Die CRT (malloc / free) ist nicht in der Lage,
+einer Adresse anzusehen, ob sie gültig ist oder nicht.
+
+ACHTUNG:  Man kann - nicht zugesprochenen Speicher (<== malloc) durchaus überschreiben (Fehler)
+
+Der Absturz kommt - manchmal - SPÄTER !!!!!!!!!!!!!
+
+DIESE FEHLER SIND BISWEILEN SCHWER ZU ENTDECKEN.
+
+
+=========================================
+
+Mögliche Hilfen:
+
+A) Memory Leak Detektor:
+
+Detected memory leaks!
+Dumping objects ->
+C:\Development\Seminar_C_Grundlagen_Mai_2024\C_GettingStarted\C_GettingStarted\Test_11.c(121) : {80} normal block at 0x0000016D691BDB70, 40 bytes long.
+ Data: <                > 00 00 00 00 02 00 00 00 04 00 00 00 06 00 00 00 
+Object dump complete.
+
+
+Hiermit kann man FEHLENDE free's suchen.
+
+Debug Error!
+
+Program: ...agen_Mai_2024\C_GettingStarted\x64\Debug\C_GettingStarted.exe
+
+HEAP CORRUPTION DETECTED: after Normal block (#80) at 0x00000175449FDD30.
+CRT detected that the application wrote to memory after end of heap buffer.
+
+Memory allocated at C:\Development\Seminar_C_Grundlagen_Mai_2024\C_GettingStarted\C_GettingStarted\Test_11.c(120).
+
+Man muss penibelst genau Adressen (malloc) und deren zulässige Länge (Parameter von malloc)
+im Programm verfolgen / beobachten.
+
+===================================================================
+
+13:10
+
+Strukturen
+
+Komplex-Übung: Strukturen + Dyn. Speicherverwaltung.
+
