@@ -130,8 +130,9 @@
     <None Include="..\C_Grundlagen_für_Programmierer.pdf" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Notizzettel.txt" />
+    <Text Include="..\Notizzettel_Montag.txt" />
     <Text Include="..\Notizzettel_Dienstag.txt" />
+    <Text Include="..\Notizzettel_Mittwoch.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Aufgabe_01_TeuflischeFolge.c" />

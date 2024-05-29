@@ -113,11 +113,19 @@ void test_09_04()
 
     int length2 = str_length(kette2);
 
-    str_insert(kette1);
+    // str_insert(kette1);
 }
 
 int str_insert(char* ursprung, char* ergebnis, int length, char welchesZeichen, int pos)
 {
+    // Teste, ob bereitgestellter Puffer (Array 'ergebnis') groß genug ist
+    int lenUrsprung = str_length(ursprung);
+
+    if (length < lenUrsprung + 1 /* einzufügendes Zeichen */ + 1 /* '\0' */) {
+
+        return 0;
+    }
+
     // a) Bis zur Position pos (einschließlich) alle Zeichen aus 'ursprung' nach 'ergebnis' umkopieren
     for (int i = 0; i <= pos; ++i) {
 
@@ -128,9 +136,6 @@ int str_insert(char* ursprung, char* ergebnis, int length, char welchesZeichen, 
     ergebnis[pos+1] = welchesZeichen;
 
     // C) Restlichen Zeichen von  'ursprung' nach 'ergebnis' umkopieren
-
-    int lenUrsprung = str_length(ursprung);
-
     for (int i = pos + 1; i < lenUrsprung; ++i) {
 
         ergebnis[i+1] = ursprung[i];
@@ -138,6 +143,8 @@ int str_insert(char* ursprung, char* ergebnis, int length, char welchesZeichen, 
 
     // d) Das ergebnis mit einer '\0' abschließen 
     ergebnis[lenUrsprung + 1] = '\0';
+
+    return 1;  // ungleich 0 
  }
 
 
@@ -149,5 +156,5 @@ void test_09()
 
     char result[20];
 
-    str_insert(kette1, result, 20, '?', 2);
+    int succeeded = str_insert(kette1, result, 20, '?', 2);
 }

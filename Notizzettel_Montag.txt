@@ -4,6 +4,21 @@ C Grundlagen
 
 Peter Loos // Du
 
+==========================================
+
+https://github.com/pelocpp
+
+https://github.com/pelocpp/c_introduction
+
+Wer weiter gehen möchte:
+
+https://github.com/pelocpp/cpp_introduction
+
+
+
+==========================================
+
+
 30+ Jahre SW-Entwicklung /Training
 
 == 20 Jahre (C/C++)

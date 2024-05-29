@@ -1,0 +1,67 @@
+==========================================
+
+C Grundlagen
+
+Mittwoch
+
+==========================================
+
+Bemerkung:
+
+int str_insert(char* ursprung, char* ergebnis, int length, char welchesZeichen, int pos)
+
+Es gibt den Datentyp bool NICHT.
+
+==> int
+
+#define FALSE 0
+#define TRUE  1
+
+Damit wird 'bool' simuliert
+
+=========================================
+
+Übungen:
+
+replace – Ersetzen eines Zeichens.
+
+append – Anhängen einer Zeichenkette an eine andere Zeichenkette ODER
+
+append – Anhängen eines Zeichens an eine andere Zeichenkette
+
+
+Bemerkungen:
+
+
+Entwurfsentscheidungen:
+
+a) void replace(char* quelle, int pos, char ch);    // Änderung im Original
+
+b) void replace(char* quelle, char* ziel, int length, int pos, char ch);    // Ergebnis in einem separaten Puffer
+
+
+
+
+
+
+"12345"   "ABC"   ==> "12345ABC"
+
+int append(char* quelle, char* anzuhaengen, char* ziel, int length);
+
+char puffer [100];
+
+append ("12345" , "ABC" , puffer, 100 );
+
+
+
+
+ETWAS EINFACHER:
+
+Anhängen eines einzelnen Zeichens:
+
+int append(char* quelle, char zeichen, char* ziel, int length);
+
+char puffer [100];
+
+append ("12345" , '!' , puffer, 100 );
+
