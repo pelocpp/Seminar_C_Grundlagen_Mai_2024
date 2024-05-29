@@ -71,16 +71,37 @@
     <ClCompile Include="Test_03.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Aufgabe_04_Wallet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png" />
     <Image Include="..\Pointer_02.png" />
     <Image Include="..\Pointer_03.png" />
     <Image Include="..\Pointer_04.png" />
+    <Image Include="..\Dynamic_01.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Dynamic_02.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Zeichenketten01.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Zeichenketten02.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Zeichenketten03.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Time.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Aufgabe_04_Wallet.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

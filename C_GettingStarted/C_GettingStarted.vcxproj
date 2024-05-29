@@ -138,6 +138,7 @@
     <ClCompile Include="Aufgabe_01_TeuflischeFolge.c" />
     <ClCompile Include="Aufgabe_02_Zinsberechnung.c" />
     <ClCompile Include="Aufgabe_03_HarmonischeReihe.c" />
+    <ClCompile Include="Aufgabe_04_Wallet.c" />
     <ClCompile Include="Program.c" />
     <ClCompile Include="Test_03.c" />
     <ClCompile Include="Test_01.c" />
@@ -153,12 +154,18 @@
     <ClCompile Include="Test_12.c" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Dynamic_01.png" />
+    <Image Include="..\Dynamic_02.png" />
     <Image Include="..\Pointer_01.png" />
     <Image Include="..\Pointer_02.png" />
     <Image Include="..\Pointer_03.png" />
     <Image Include="..\Pointer_04.png" />
+    <Image Include="..\Zeichenketten01.png" />
+    <Image Include="..\Zeichenketten02.png" />
+    <Image Include="..\Zeichenketten03.png" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Aufgabe_04_Wallet.h" />
     <ClInclude Include="Time.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
