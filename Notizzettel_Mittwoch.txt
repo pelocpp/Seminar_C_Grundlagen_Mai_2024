@@ -302,3 +302,14 @@ void printTime(struct Time time);
 ==> Performanz ist auf Grund der Kopie schlecht!
 
 Go-for-Pointer :)
+
+=====================================================
+
+Übung: Geldbeutel.
+
+// 50€ und 30 ct
+addWallet(&wallet1, 50, 30);
+
+
+// 50€ und 30 ct entnehmen - WENN soviel Geld im Geldbeutel vorhanden ist !!!
+subWallet(&wallet1, 50, 30);
