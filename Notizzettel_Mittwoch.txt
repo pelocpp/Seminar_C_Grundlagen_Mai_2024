@@ -313,3 +313,89 @@ addWallet(&wallet1, 50, 30);
 
 // 50€ und 30 ct entnehmen - WENN soviel Geld im Geldbeutel vorhanden ist !!!
 subWallet(&wallet1, 50, 30);
+
+=====================================================
+
+Bemerkung zur Struktur Wallet:
+
+
+struct Wallet
+{
+    unsigned long long m_euros;
+    unsigned int m_cents;
+};
+
+Das mit dem Unterlauf ist nicht immer ganz einfach:
+
+    // underrun
+    if (wallet->m_cents < other->m_cents)
+    {
+        wallet->m_euros = wallet->m_euros - 1;
+        wallet->m_cents = wallet->m_cents + 100;
+    }
+
+    wallet->m_euros = wallet->m_euros - other->m_euros;
+    wallet->m_cents = wallet->m_cents - other->m_cents;
+
+=====> Produkt-SW realisieren:
+
+struct Wallet
+{
+    unsigned int m_totalCents;  // es genügt eine einzige Variable: Cent 
+};
+
+==============================================================
+
+Abschluss:
+==========
+
+Umsetzung eines dynamischen Arrays in C:
+
+Kombination: Struktur und dyn. Daten.
+
+Struktur 'DynamicIntArray':
+
+Wir programmieren in C mit einem Touch "Objekt-Orientierung".
+
+==> OO Struktur.
+
+(( C++ viel, viel besser ))
+
+Wie geht das ???
+
+2 Dinge:
+
+A) Eine Struktur (Klasse / Daten)
+
+B) Mehrere Funktionen (Klasse / Methoden),
+   die diese Struktur als (ersten) Parameter haben.
+
+
+Das sieht zu einer OO-Klasse recht ähnlich aus:
+
+==> OO Klasse - die diese Funktionen INNERHALB der Klasse als MEMBER-Methoden hat.
+
+(( Methode der schrittweisen Verfeinerung ))
+
+Merksatz: Zu jedem malloc/calloc gehört ein free !!!
+
+Nebenbemerkung:
+
+In der OO-Welt:
+
+== Konstruktoren    (initDynamicIntArray)
+== Destruktoren     (releaseDynamicIntArray)
+== Methoden         (Funktionen)
+== getter/setter    (Zugriff auf die privaten Instanzvariablen: nachahmen)
+
+Gibt es in C BEIDE NICHT !!!!!!!
+
+// ==================================================
+
+Benerkung:
+
+Werden Funktionen bzgl. ihrer Schnittstelle / Funktionalität komplexer,
+
+so bedarf es einer SPEZIFIKATION / DOKUMENTATION.
+
+// ==================================================

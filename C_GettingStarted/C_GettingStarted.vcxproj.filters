@@ -74,6 +74,9 @@
     <ClCompile Include="Aufgabe_04_Wallet.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Test_13.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Pointer_01.png" />
