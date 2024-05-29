@@ -4,6 +4,9 @@ C Grundlagen
 
 Peter Loos // Du
 
+peter.loos@gmx.de
+
+
 ==========================================
 
 https://github.com/pelocpp
@@ -15,6 +18,7 @@ Wer weiter gehen möchte:
 https://github.com/pelocpp/cpp_introduction
 
 
+https://peterloos.de/
 
 ==========================================
 
